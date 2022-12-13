@@ -419,6 +419,7 @@ struct _GLFWwndconfig
     GLFWbool      mousePassthrough;
     GLFWbool      scaleToMonitor;
     GLFWbool      scaleFramebuffer;
+    GLFWbool      softFullscreen;
     struct {
         char      frameName[256];
     } ns;
