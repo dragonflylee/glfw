@@ -939,7 +939,13 @@ static GLFWbool createNativeWindow(_GLFWwindow* window,
     }
 
     if (window->monitor)
-        [window->ns.object setLevel:NSMainMenuWindowLevel + 1];
+    {
+        if (_glfw.hints.window.softFullscreen)
+            [NSApp setPresentationOptions:NSApplicationPresentationHideDock |
+                   NSApplicationPresentationHideMenuBar];
+        else
+            [window->ns.object setLevel:NSMainMenuWindowLevel + 1];
+    }
     else
     {
         if (wndconfig->xpos == GLFW_ANY_POSITION ||
@@ -1417,7 +1423,12 @@ void _glfwSetWindowMonitorCocoa(_GLFWwindow* window,
 
     if (window->monitor)
     {
-        [window->ns.object setLevel:NSMainMenuWindowLevel + 1];
+        if (_glfw.hints.window.softFullscreen)
+            [NSApp setPresentationOptions:NSApplicationPresentationHideDock |
+                   NSApplicationPresentationHideMenuBar];
+        else
+            [window->ns.object setLevel:NSMainMenuWindowLevel + 1];
+
         [window->ns.object setHasShadow:NO];
 
         acquireMonitor(window);
@@ -1469,6 +1480,9 @@ void _glfwSetWindowMonitorCocoa(_GLFWwindow* window,
                 NSWindowCollectionBehaviorFullScreenNone;
             [window->ns.object setCollectionBehavior:behavior];
         }
+
+        if (_glfw.hints.window.softFullscreen)
+            [NSApp setPresentationOptions:NSApplicationPresentationDefault];
 
         [window->ns.object setHasShadow:YES];
         // HACK: Clearing NSWindowStyleMaskTitled resets and disables the window
