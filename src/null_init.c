@@ -60,6 +60,8 @@ GLFWbool _glfwConnectNull(int platformID, _GLFWplatform* platform)
         .setTextInputFocus = _glfwSetTextInputFocusNull,
         .setIMEStatus = _glfwSetIMEStatusNull,
         .getIMEStatus = _glfwGetIMEStatusNull,
+        .setTouchInput = _glfwSetTouchInputNull,
+        .touchInputSupported = _glfwTouchInputSupportedNull,
         .initJoysticks = _glfwInitJoysticksNull,
         .terminateJoysticks = _glfwTerminateJoysticksNull,
         .pollJoystick = _glfwPollJoystickNull,
