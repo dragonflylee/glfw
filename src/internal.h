@@ -417,6 +417,7 @@ struct _GLFWwndconfig
     bool          centerCursor;
     bool          focusOnShow;
     bool          mousePassthrough;
+    bool          softFullscreen;
     bool          scaleToMonitor;
     bool          scaleFramebuffer;
     struct {
