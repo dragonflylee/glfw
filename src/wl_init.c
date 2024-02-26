@@ -471,6 +471,8 @@ GLFWbool _glfwConnectWayland(int platformID, _GLFWplatform* platform)
         .setTextInputFocus = _glfwSetTextInputFocusWayland,
         .setIMEStatus = _glfwSetIMEStatusWayland,
         .getIMEStatus = _glfwGetIMEStatusWayland,
+        .setTouchInput = _glfwSetTouchInputWayland,
+        .touchInputSupported = _glfwTouchInputSupportedWayland,
 #if defined(GLFW_BUILD_LINUX_JOYSTICK)
         .initJoysticks = _glfwInitJoysticksLinux,
         .terminateJoysticks = _glfwTerminateJoysticksLinux,
