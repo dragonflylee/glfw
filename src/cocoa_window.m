@@ -1013,6 +1013,8 @@ static GLFWbool createNativeWindow(_GLFWwindow* window,
             [window->ns.object zoom:nil];
     }
 
+    [window->ns.object setColorSpace:[NSColorSpace sRGBColorSpace]];
+
     if (strlen(wndconfig->ns.frameName))
         [window->ns.object setFrameAutosaveName:@(wndconfig->ns.frameName)];
 
