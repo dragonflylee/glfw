@@ -2873,6 +2873,11 @@ void _glfwResetPreeditTextWin32(_GLFWwindow* window)
     ImmReleaseContext(hWnd, hIMC);
 }
 
+void _glfwSetTextInputFocusWin32(_GLFWwindow* window, GLFWbool focused)
+{
+    // TODO: Add safe IMM/TSF text input focus plumbing without changing IME status.
+}
+
 void _glfwSetIMEStatusWin32(_GLFWwindow* window, int active)
 {
     HWND hWnd = window->win32.handle;

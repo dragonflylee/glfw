@@ -3943,6 +3943,11 @@ void _glfwResetPreeditTextWayland(_GLFWwindow* window)
 {
 }
 
+void _glfwSetTextInputFocusWayland(_GLFWwindow* window, GLFWbool focused)
+{
+    // TODO: Wire this to text-input-v3 enable/disable or focus integration.
+}
+
 void _glfwSetIMEStatusWayland(_GLFWwindow* window, int active)
 {
 }
